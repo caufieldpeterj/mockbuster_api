@@ -60,6 +60,13 @@ mongoose.connection.once('open', ()=>{
     console.log(`Mongoose connected on PORT ${PORT}`)
 })
 
+// ===========================================
+// Redirect
+// ===========================================
+APP.get('/', (req, res) => {
+  res.redirect('/mockbuster');
+});
+
 // Listener
 APP.listen(PORT,()=> {
     console.log('listening on ' + PORT)
