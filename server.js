@@ -38,8 +38,11 @@ APP.use(session({
     saveUninitialized: false,
 }));
 
+// Database
+const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost:27017/${DBNAME}`;
+
 // Configure Mongo connection
-mongoose.connect(`mongodb://localhost:27017/${DBNAME}`, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 mongoose.connection.once('open', ()=>{
     console.log(`Mongoose connected on PORT ${PORT}`)
 })
