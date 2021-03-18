@@ -21,7 +21,7 @@ const PORT = process.env.PORT;
 
 
 // == WHITELIST / CORS OPTIONS == // 
-const whitelist = ['http://localhost:3000']
+const whitelist = ['http://localhost:3000', 'https://nameless-peak-75736.herokuapp.com']
 const corsOptions = {
   origin: function (origin, callback) {
 
