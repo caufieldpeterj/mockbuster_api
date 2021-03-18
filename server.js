@@ -14,7 +14,7 @@ const APP = express();
 const PORT = process.env.PORT;
 const DBNAME = process.env.DBNAME;
 
-
+/*
 // == WHITELIST / CORS OPTIONS == // 
 const whitelist = ['http://localhost:3000']
 const corsOptions = {
@@ -30,6 +30,7 @@ const corsOptions = {
 
 // MIDDLEWARE
 APP.use(cors(corsOptions));
+*/
 APP.use(express.json());
 APP.use(session({
     secret: process.env.SECRET,
