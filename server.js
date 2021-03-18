@@ -21,8 +21,13 @@ const PORT = process.env.PORT;
 
 
 // == WHITELIST / CORS OPTIONS == // 
-const whitelist = ['http://localhost:3000', 'https://nameless-peak-75736.herokuapp.com']
-const corsOptions = {
+const whitelist = 
+  [
+    // 'http://localhost:3000', 
+    'https://nameless-peak-75736.herokuapp.com'
+  ]
+/*
+  const corsOptions = {
   origin: function (origin, callback) {
 
     if (whitelist.indexOf(origin) !== -1) {
@@ -32,6 +37,7 @@ const corsOptions = {
     }
   }
 }
+*/
 
 // ===========================================
 // Database configuration
@@ -42,7 +48,7 @@ const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost:27017/${DBNA
 // ===========================================
 // MIDDLEWARE
 // ===========================================
-APP.use(cors(corsOptions));
+APP.use(cors());
 APP.use(express.urlencoded({ extended: false}))
 APP.use(express.json());
 APP.use(session({
